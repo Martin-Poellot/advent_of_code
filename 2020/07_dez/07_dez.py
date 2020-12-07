@@ -41,19 +41,21 @@ counter = 0
 for bag in bags:
     if bag['target_color'] == 'shiny gold':
         bags_included = bag['roots']
-        print(bag['roots'])
         while len(bags_included) > 0:
+            print(f'Bags left: {bags_included}')
             processed_bag = bags_included.pop()
             [nr_of_bags, color] = processed_bag
             processed = False
             for bag in bags:
                 if bag['target_color'] == color:
-                    for i, [b_nr, c] in enumerate(bag['roots']):
-                        bag['roots'][i] = [b_nr * nr_of_bags, c]
-                    bags_included += bag['roots']
+                    bag_2 = []
+                    print(f"Bags in {color} bags: {bag['roots']}")
+                    for [b_nr, c] in bag['roots']:
+                        bag_2.append([b_nr * nr_of_bags, c])
+                    bags_included += bag_2
                     processed = True
                 if processed:
                     counter += nr_of_bags
-                    print(f'Adding {nr_of_bags}')
+                    print(f'Adding {nr_of_bags} {color} bags, totalling {counter}')
                     break
 print(f'Result 2: {counter}')
