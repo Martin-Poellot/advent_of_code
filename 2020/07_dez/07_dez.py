@@ -1,5 +1,5 @@
 bags = []
-with open("07_dez_input2.txt", 'r') as f:
+with open("07_dez_input.txt", 'r') as f:
     lines = f.readlines()
     for line in lines:
         bag = {}
