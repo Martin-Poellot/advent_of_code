@@ -1,5 +1,5 @@
 bags = []
-with open("07_dez_input.txt", 'r') as f:
+with open("07_dez_input2.txt", 'r') as f:
     lines = f.readlines()
     for line in lines:
         bag = {}
@@ -20,6 +20,7 @@ with open("07_dez_input.txt", 'r') as f:
 
 print(bags)
 
+# Puzzle 1: counting up from the root to the target
 possible_bags = []
 for bag in bags:
     for root in bag['roots']:
@@ -27,4 +28,32 @@ for bag in bags:
             print(bag)
             possible_bags.append(bag['target_color'])
 
-print(possible_bags)
+for possible_bag in possible_bags:
+    for bag in bags:
+        for root in bag['roots']:
+            if possible_bag in root:
+                possible_bags.append(bag['target_color'])
+
+print(f'Result 1: {len(set(possible_bags))}')
+
+# Puzzle 2: counting down the roots
+counter = 0
+for bag in bags:
+    if bag['target_color'] == 'shiny gold':
+        bags_included = bag['roots']
+        print(bag['roots'])
+        while len(bags_included) > 0:
+            processed_bag = bags_included.pop()
+            [nr_of_bags, color] = processed_bag
+            processed = False
+            for bag in bags:
+                if bag['target_color'] == color:
+                    for i, [b_nr, c] in enumerate(bag['roots']):
+                        bag['roots'][i] = [b_nr * nr_of_bags, c]
+                    bags_included += bag['roots']
+                    processed = True
+                if processed:
+                    counter += nr_of_bags
+                    print(f'Adding {nr_of_bags}')
+                    break
+print(f'Result 2: {counter}')
