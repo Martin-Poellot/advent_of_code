@@ -7,7 +7,14 @@ Also don't forget: everyone has different input, so the code matters, not the fi
 
 ## Update:
 
-I am adding runtimes since more complex puzzles arose that are sometimes not beatable with my simple approaches.
+I am adding runtimes since more complex puzzles arose that are sometimes not beatable with my simple (first try) approaches.
+
+My machine:
+OS: Windows 10 Version 2004 Build 19041.685
+Processor: Intel Core i7-6700K @ 4.00 GHz
+RAM: 64 GB @2133 MHz
+SSD: Corsair Force 3 SSD (110 GB)
+
 
 | Puzzle | Runtime Part 1 | Runtime Part 2 |
 | :--- | ---: | ---: |
