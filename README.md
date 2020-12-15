@@ -31,3 +31,8 @@ I am adding runtimes since more complex puzzles arose that are sometimes not bea
 | Day 18: --- | -.--- s | -.--- s|
 | Day 19: --- | -.--- s | -.--- s|
 | Day 20: --- | -.--- s | -.--- s|
+| Day 21: --- | -.--- s | -.--- s|
+| Day 22: --- | -.--- s | -.--- s|
+| Day 23: --- | -.--- s | -.--- s|
+| Day 24: --- | -.--- s | -.--- s|
+| Day 25: --- | -.--- s | -.--- s|
