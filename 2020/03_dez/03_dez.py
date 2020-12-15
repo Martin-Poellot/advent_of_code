@@ -1,3 +1,5 @@
+import time
+
 data = []
 with open("03_dez_input.txt", 'r') as f:
     lines = f.readlines()
@@ -23,15 +25,25 @@ def do_calc(move):
     return tree_counter
 
 if __name__ == '__main__':
-    moves = [[1, 1], [3, 1], [5, 1], [7, 1], [1, 2]]
+    start_1 = time.time()
+    moves = [[3, 1], [1, 1], [5, 1], [7, 1], [1, 2]]
     tree_counters = []
     for move in moves:
-        tree_counter = do_calc(move)
+        if move == [3, 1]:
+            tree_counter = do_calc(move)
+            tree_counters.append(tree_counter)
+            elapsed1 = time.time() - start_1
+            print(f'Result for [3, 1]: {tree_counters[0]}')
+            print(f'Elapsed Time: {elapsed1:.6f}s')
+            start_2 = time.time()
+        else:
+            tree_counter = do_calc(move)
+            tree_counters.append(tree_counter)
         print(f'Final Tree Encounter Counter for {move}: {tree_counter}')
-        tree_counters.append(tree_counter)
     result_2 = tree_counters[0]
-    print(f'Result for [3, 1]: {tree_counters[1]}')
     for p in tree_counters[1:]:
         print(f"{result_2} * {p}")
         result_2 *= p
+    elapsed2 = time.time() - start_2
     print(f'Multiple of trees hit: {result_2}')
+    print(f'Elapsed Time: {elapsed2:.6f}s')

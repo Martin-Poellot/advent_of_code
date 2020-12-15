@@ -1,10 +1,11 @@
+import time
 data = []
 with open("06_dez_input.txt", 'r') as f:
     lines = f.readlines()
     for line in lines:
         data.append(line)
 
-
+start_1 = time.time()
 people_vote = ''
 all_vote = []
 counts = 0
@@ -31,4 +32,6 @@ for v in all_vote:
             if c in all_choices:
                 all_choices.remove(c)
 counts += len(all_choices)
+elapsed1 = time.time() - start_1
 print(counts)
+print(f'Elapsed Time: {elapsed1:.6f}s')

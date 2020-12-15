@@ -1,10 +1,10 @@
+import time
 data = []
 with open("11_dez_input.txt", 'r') as f:
     lines = f.readlines()
     for line in lines:
         data.append(line.strip('\n'))
 
-print(data)
 # rearrange Floor to an image
 import numpy as np
 floor_img = np.zeros((len(data), len(data[0])))
@@ -15,6 +15,7 @@ for y, line in enumerate(data):
         elif l == 'L':
             floor_img[y, x] = 127
 
+start_1 = time.time()
 floor_state = floor_img.copy()
 while 1:
     new_seat_state = np.zeros_like(floor_state)
@@ -46,9 +47,12 @@ while 1:
 
 unique, counts = np.unique(new_seat_state, return_counts=True)
 res = dict(zip(unique, counts))
+elapsed1 = time.time() - start_1
 print(f'Res: {res[255]}')
+print(f'Elapsed Time: {elapsed1:.6f}s')
 
 # puzzle # 2
+start_2 = time.time()
 floor_state = floor_img.copy()
 while 1:
     new_seat_state = np.zeros_like(floor_state)
@@ -158,4 +162,6 @@ while 1:
 
 unique, counts = np.unique(new_seat_state, return_counts=True)
 res = dict(zip(unique, counts))
+elapsed2 = time.time() - start_2
 print(f'Res: {res[255]}')
+print(f'Elapsed Time: {elapsed2:.6f}s')

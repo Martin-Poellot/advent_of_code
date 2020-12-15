@@ -1,5 +1,5 @@
 import re
-
+import time
 passports = []
 with open("04_dez_input.txt", 'r') as f:
     lines = f.readlines()
@@ -13,6 +13,7 @@ with open("04_dez_input.txt", 'r') as f:
             new_passport += f'{contents} '
     passports.append(new_passport)
 
+
 passports_list = []
 for passport in passports:
     entries = passport.split(' ')
@@ -22,6 +23,23 @@ for passport in passports:
         pp[idf] = content
     passports_list.append(pp)
 
+start_1 = time.time()
+valid = 0
+required_fields = ['byr', 'iyr', 'eyr', 'hgt', 'hcl', 'ecl', 'pid']
+for pp in passports_list:
+    something_missing = False
+    for req_field in required_fields:
+        if req_field not in pp.keys():
+            something_missing = True
+            break
+    if not something_missing:
+        valid += 1
+
+elapsed1 = time.time() - start_1
+print(f'Result 1: {valid}')
+print(f'Elapsed Time: {elapsed1:.6f}s')
+
+start_2 = time.time()
 valid = 0
 required_fields = ['byr', 'iyr', 'eyr', 'hgt', 'hcl', 'ecl', 'pid']
 for pp in passports_list:
@@ -70,6 +88,6 @@ for pp in passports_list:
                 break
     if not something_missing:
         valid += 1
-
-print(f'Result 1: {valid}')
+elapsed2 = time.time() - start_2
 print(f'Result 2: {len(passports_list)}')
+print(f'Elapsed Time: {elapsed2:.6f}s')

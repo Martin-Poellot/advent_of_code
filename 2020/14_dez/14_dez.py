@@ -1,3 +1,4 @@
+import time
 data = []
 with open("14_dez_input.txt", 'r') as f:
     lines = f.readlines()
@@ -5,6 +6,7 @@ with open("14_dez_input.txt", 'r') as f:
         data.append(line.strip('\n'))
 
 # Puzzle 1
+start_1 = time.time()
 memory = {}
 masks = []
 curr_mask = None
@@ -30,10 +32,14 @@ for line in data:
                 new_value[i] = current_mask_bit
 
         memory[curr_address] = int("".join(new_value), 2)
+
+elapsed1 = time.time() - start_1
 print(f'Sum of all Values in Memory: {sum(memory.values())}')
+print(f'Elapsed Time: {elapsed1:.6f}s')
 
 # Puzzle 2
 
+start_2 = time.time()
 memory = {}
 masks = []
 curr_mask = None
@@ -77,4 +83,6 @@ for line in data:
                     float_address += str(x)
             memory[int(float_address, 2)] = curr_value
 
+elapsed2 = time.time() - start_2
 print(f'Sum of all Values in Memory: {sum(memory.values())}')
+print(f'Elapsed Time: {elapsed2:.6f}s')

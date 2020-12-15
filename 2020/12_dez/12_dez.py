@@ -1,3 +1,4 @@
+import time
 data = []
 with open("12_dez_input.txt", 'r') as f:
     lines = f.readlines()
@@ -18,6 +19,7 @@ def get_heading(heading):
 
 # puzzle 1
 
+start_1 = time.time()
 heading = 90
 # east = +  |  west = -
 # north = + | south = -
@@ -48,11 +50,13 @@ for instruction in data:
     elif action == 'L':
         heading -= value
 
-print(position)
+elapsed1 = time.time() - start_1
 print(abs(position[0]) + abs(position[1]))
+print(f'Elapsed Time: {elapsed1:.6f}s')
 
 # puzzle 2
 
+start_2 = time.time()
 waypoint = [10, 1]
 position = [0, 0]
 
@@ -68,17 +72,18 @@ for instruction in data:
         waypoint[0] -= value
     elif action == 'R':
         times = int(value / 90)
-        for time in range(times):
+        for t in range(times):
             waypoint = waypoint[::-1]
             waypoint[1] *= -1
     elif action == 'L':
         times = int(value / 90)
-        for time in range(times):
+        for t in range(times):
             waypoint = waypoint[::-1]
             waypoint[0] *= -1
     elif action == 'F':
         position[0] += waypoint[0] * value
         position[1] += waypoint[1] * value
 
-print(position)
+elapsed2 = time.time() - start_2
 print(abs(position[0]) + abs(position[1]))
+print(f'Elapsed Time: {elapsed2:.6f}s')
