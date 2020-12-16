@@ -33,7 +33,7 @@ My machine:
 | Day 13: Shuttle Search | 0.000017 s | 0.000059 s|
 | Day 14: Docking Data | 0.003261 s | 0.678587 s|
 | Day 15: Rambunctious Recitation | 0.001626 s | 70.940934 s|
-| Day 16: --- | -.--- s | -.--- s|
+| Day 16: Ticket Translation | 0.305188 s | 0.043990 s|
 | Day 17: --- | -.--- s | -.--- s|
 | Day 18: --- | -.--- s | -.--- s|
 | Day 19: --- | -.--- s | -.--- s|
