@@ -34,12 +34,12 @@ My machine:
 | Day 14: Docking Data | 0.003261 s | 0.678587 s|
 | Day 15: Rambunctious Recitation | 0.001626 s | 70.940934 s|
 | Day 16: Ticket Translation | 0.305188 s | 0.043990 s|
-| Day 17: --- | -.--- s | -.--- s|
+| Day 17: Conway Cubes | 0.210060 s | 14.184512 s|
 | Day 18: --- | -.--- s | -.--- s|
-| Day 19: --- | -.--- s | -.--- s|
+| Day 19: Monster Messages | 0.063001 s | 0.198027 s|
 | Day 20: --- | -.--- s | -.--- s|
-| Day 21: --- | -.--- s | -.--- s|
-| Day 22: --- | -.--- s | -.--- s|
+| Day 21: Allergen Assessment | 0.000998 s | 0.001000 s|
+| Day 22: Crab Combat | 0.009900 s | 1.100029 s|
 | Day 23: --- | -.--- s | -.--- s|
 | Day 24: --- | -.--- s | -.--- s|
 | Day 25: --- | -.--- s | -.--- s|
