@@ -39,7 +39,7 @@ My machine:
 | Day 19: --- | -.--- s | -.--- s|
 | Day 20: --- | -.--- s | -.--- s|
 | Day 21: Allergen Assessment | 0.000998 s | 0.001000 s|
-| Day 22: Crab Combat | -.--- s | -.--- s|
+| Day 22: Crab Combat | 0.009900 s | 1.100029 s|
 | Day 23: --- | -.--- s | -.--- s|
 | Day 24: --- | -.--- s | -.--- s|
 | Day 25: --- | -.--- s | -.--- s|
