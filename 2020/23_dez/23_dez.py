@@ -3,6 +3,7 @@ import time
 example = '389125467'
 my_input = '942387615'
 
+
 def put_current_cup_as_first(current_cup_value, input_list):
     current_cup_index = input_list.index(current_cup_value)
     while current_cup_index != 0:
@@ -33,14 +34,14 @@ def remove_3(input_list, current_cup_index):
 def remove_3_ext(input_list, current_cup_index):
     removed_3_cups = []
     if current_cup_index < len(input_list) - 3:
-        for i in range(current_cup_index, current_cup_index + 3):
-            removed_3_cups.append(input_list.pop(i + 1))
+        for i in range(3):
+            removed_3_cups.append(input_list.pop(current_cup_index + 1))
     else:
         for i in range(3):
             q = input_list.pop(0)
             input_list.append(q)
-        for i in range(current_cup_index - 3, current_cup_index):
-            removed_3_cups.append(input_list.pop(i + 1))
+        for i in range(3):
+            removed_3_cups.append(input_list.pop(current_cup_index - 2))
     return removed_3_cups, input_list
 
 
@@ -104,5 +105,5 @@ print(star_cups)
 result = star_cups[0] * star_cups[1]
 
 elapsed2 = time.time() - start_2
-print(f'Result 2: {result_str}')
+print(f'Result 2: {result}')
 print(f'Elapsed Time: {elapsed2:.6f}s')
